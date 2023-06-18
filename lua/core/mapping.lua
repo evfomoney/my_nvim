@@ -6,7 +6,7 @@ local opt = {noremap = true, silent = true}
 
 map("n", "s", "", opt)
 map("i", "jk", "<Esc>", opt)
-map("n", "Q", ":q!", opt)
+map("n", "Q", ":qa!", opt)
 
 map('n', 'sv', ":vsp<cr>", opt)
 map('n', 'sh', ':sp<cr>', opt)
@@ -116,6 +116,21 @@ pluginKeys.mapLSP = function(mapbuf)
   -- mapbuf('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opt)
   -- mapbuf('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
 end
+
+-- 代码注释插件
+-- see ./lua/plugin-config/comment.lua
+pluginKeys.comment = {
+  -- Normal 模式快捷键
+  toggler = {
+    line = "gcc", -- 行注释
+    block = "gbc", -- 块注释
+  },
+  -- Visual 模式
+  opleader = {
+    line = "gc",
+    bock = "gb",
+  },
+}
 
 return pluginKeys
 

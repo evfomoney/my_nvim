@@ -40,6 +40,20 @@ return require('packer').startup(function(use)
   -- nvim-treesitter
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
+  -- autopairs.nvim
+  use {
+  "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
+  -- command.nvim
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
+
   -- mason.nvim
   use {
     "williamboman/mason.nvim",
