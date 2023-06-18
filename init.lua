@@ -14,8 +14,6 @@ require('plugins.nvim-treesitter')
 require('mlsp.m-init')
 require('mlsp.cmp')
 
-
-
 -- 调节window10 剪切板
 vim.cmd([[
 augroup fix_yank

@@ -12,36 +12,38 @@ require("mason-lspconfig").setup({
   -- 确保安装，根据需要填写
   ensure_installed = {
     "lua_ls",
+    "pyright",
+    "html",
   },
 })
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require('lspconfig')
 
-require("lspconfig")["lua_ls"].setup {
-  capabilities = capabilities,
-}
-
---require("lspconfig")["pyright"].setup {
-  --capabilities = capabilities,
---}
---
---
---require("lspconfig")["cssls"].setup {
-  --capabilities = capabilities,
---}
---
---require("lspconfig")["html"].setup {
-  --capabilities = capabilities,
---}
---
---require("lspconfig")["jsonls"].setup {
-  --capabilities = capabilities,
---}
---
---require("lspconfig")["tsserver"].setup {
-  --capabilities = capabilities,
---}
---
---require("lspconfig")["bashls"].setup {
-  --capabilities = capabilities,
---}
+require("mason-lspconfig").setup_handlers({
+  function (server_name)
+    require("lspconfig")[server_name].setup{}
+  end,
+  -- Next, you can provide targeted overrides for specific servers.
+  ["lua_ls"] = function ()
+    lspconfig.lua_ls.setup {
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { "vim" }
+          }
+        }
+    }
+  }
+  end,
+  ["clangd"] = function ()
+    lspconfig.clangd.setup {
+      cmd = {
+        "clangd",
+        -- "--header-insertion=never",
+        "--query-driver=/opt/homebrew/opt/llvm/bin/clang++",
+        -- "--all-scopes-completion",
+        -- "--completion-style=detailed",
+      }
+    }
+  end
+})
