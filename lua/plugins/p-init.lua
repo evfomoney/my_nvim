@@ -54,6 +54,16 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- hop.nvim
+  use {
+      'phaazon/hop.nvim',
+      branch = 'v2', -- optional but strongly recommended
+      config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
+
   -- mason.nvim
   use {
     "williamboman/mason.nvim",
@@ -63,16 +73,12 @@ return require('packer').startup(function(use)
 
   --补全部分
   -- 补全引擎
-  use("hrsh7th/nvim-cmp")
-  -- snippet 引擎
-  use("hrsh7th/vim-vsnip")
-  -- 补全源
-  use("L3MON4D3/LuaSnip")
-  use("hrsh7th/cmp-vsnip")
-  use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
-  use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
-  use("hrsh7th/cmp-path") -- { name = 'path' }
-  use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "L3MON4D3/LuaSnip" -- snippets引擎，不装这个自动补全会出问题
+  use "saadparwaiz1/cmp_luasnip"
+  use "rafamadriz/friendly-snippets"
+  use "hrsh7th/cmp-path" -- 文件路径
   -- 常见编程语言代码段
   use("rafamadriz/friendly-snippets")
   

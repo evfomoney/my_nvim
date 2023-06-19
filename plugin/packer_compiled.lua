@@ -90,16 +90,6 @@ _G.packer_plugins = {
     path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  ["cmp-buffer"] = {
-    loaded = true,
-    path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -110,15 +100,21 @@ _G.packer_plugins = {
     path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["cmp-vsnip"] = {
+  cmp_luasnip = {
     loaded = true,
-    path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
-    url = "https://github.com/hrsh7th/cmp-vsnip"
+    path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["hop.nvim"] = {
+    config = { "\27LJ\2\2U\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0" },
+    loaded = true,
+    path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/hop.nvim",
+    url = "https://github.com/phaazon/hop.nvim"
   },
   ["lualine-lsp-progress"] = {
     loaded = true,
@@ -195,23 +191,22 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+try_loadstring("\27LJ\2\2U\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
+time([[Config for hop.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\0025\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

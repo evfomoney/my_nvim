@@ -44,6 +44,9 @@ map("n", "<leader>fg", ":Telescope git_files<cr>", opt)
 -- 列出帮助文档
 map("n", '<leader>fh', ":Telescope man_pages<cr>", opt)
 
+-- hop.nvim
+map('n', "<leader>hw", ":HopWordMW<cr>", opt)
+
 
 
 local pluginKeys = {}
