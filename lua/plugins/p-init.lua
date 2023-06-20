@@ -77,7 +77,6 @@ return require('packer').startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "L3MON4D3/LuaSnip" -- snippets引擎，不装这个自动补全会出问题
   use "saadparwaiz1/cmp_luasnip"
-  use "rafamadriz/friendly-snippets"
   use "hrsh7th/cmp-path" -- 文件路径
   -- 常见编程语言代码段
   use("rafamadriz/friendly-snippets")
