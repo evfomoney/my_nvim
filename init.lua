@@ -14,6 +14,9 @@ require('plugins.nvim-treesitter')
 -- mason.nvim
 require('mlsp.m-init')
 require('mlsp.cmp')
+require('mlsp.lspconfig')
+require('mlsp.null-ls')
+require('mlsp.trouble')
 
 -- health.lua
 require('health')
