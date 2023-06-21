@@ -1,6 +1,5 @@
-
 vim.g.encoding = "UTF-8"
-vim.o.fileencoding = 'utf-8'
+vim.o.fileencoding = "utf-8"
 
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
@@ -10,9 +9,9 @@ vim.wo.relativenumber = true
 
 vim.wo.cursorline = true
 
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
-vim.wo.colorcolumn = '80'
+vim.wo.colorcolumn = "80"
 
 vim.o.tabstop = 4
 vim.bo.tabstop = 4
@@ -43,12 +42,12 @@ vim.bo.autoread = true
 
 vim.wo.wrap = false
 
-vim.o.whichwrap = '<,>,[,]'
+vim.o.whichwrap = "<,>,[,]"
 
 vim.o.hidden = true
 
-vim.o.mouse = 'a'
-vim.cmd('set clipboard=unnamedplus')
+vim.o.mouse = "a"
+vim.opt.clipboard:append("unnamedplus")
 
 vim.o.backup = false
 vim.o.writebackup = false
@@ -61,9 +60,9 @@ vim.o.timeoutlen = 500
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.g.completeopt = 'menu,menuone,noselect,noinsert'
+vim.g.completeopt = "menu,menuone,noselect,noinsert"
 
-vim.o.background = 'dark'
+vim.o.background = "dark"
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
 
@@ -72,7 +71,7 @@ vim.o.listchars = "space:."
 
 vim.o.wildmenu = true
 
-vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.o.shortmess = vim.o.shortmess .. "c"
 
 vim.o.pumheight = 10
 
@@ -80,3 +79,4 @@ vim.o.showtabline = 2
 
 vim.o.showmode = false
 
+vim.opt.iskeyword:append("-") -- consider string-string as whole word
