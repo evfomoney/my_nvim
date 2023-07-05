@@ -48,7 +48,8 @@ map("n", "<leader>fg", ":Telescope git_files<cr>", opt)
 map("n", "<leader>fh", ":Telescope man_pages<cr>", opt)
 
 -- nvim-tree
-map("n", "<leader>t", ":NvimTreeToggle<cr>", opt)
+map("n", "<leader>tt", ":NvimTreeToggle<cr>", opt)
+map("n", "<leader>tr", ":NvimTreeRefresh<cr>", opt)
 
 -- hop.nvim_mappings
 map("n", "<leader>hw", ":HopWordMW<cr>", opt)
