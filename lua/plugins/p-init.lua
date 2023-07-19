@@ -24,6 +24,7 @@ return require("packer").startup(function(use)
 	-- My plugins here
 	-- colorschme
 	use("folke/tokyonight.nvim")
+	use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
 	-- nvim-tree
 	use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" })
 	-- bufferline

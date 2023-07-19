@@ -28,7 +28,7 @@ mason_lspconfig.setup({
 		"tailwindcss",
 		"lua_ls",
 		-- "emmet_ls",
-		"clangd",
+		-- "clangd",
 		"pyright",
 		"jdtls",
 	},
