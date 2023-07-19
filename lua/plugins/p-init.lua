@@ -108,7 +108,7 @@ return require("packer").startup(function(use)
 	-- trouble
 	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
-	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+	use("onsails/lspkind.nvim") -- UI增强, icons for autocompletion
 	use("simrat39/rust-tools.nvim") -- rust server
 
 	-- formatting & linting

@@ -18,7 +18,7 @@ null_ls.setup({
 		--  to disable file types use
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 		formatting.google_java_format, -- java formatter
-		formatting.black,
+		formatting.black, -- python formatter
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
 		diagnostics.eslint_d.with({ -- js/ts linter

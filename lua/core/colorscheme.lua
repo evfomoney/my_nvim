@@ -5,10 +5,10 @@ if not status_ok then
 	return
 end
 
-vim.o.background = "light" -- or "light" for light mode
+vim.o.background = "dark" -- or "light" or "dark"
 
 tn.setup({
-	style = "storm", -- used for tokyonight
+	-- style = "storm", -- used for tokyonight
 	contrast = "soft", -- used for gruvbox : hard , soft or empty string
 
 	dim_inactive = true,
