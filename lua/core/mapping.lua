@@ -5,7 +5,7 @@ local map = vim.keymap.set
 local opt = { noremap = true, silent = true }
 
 map("n", "s", "", opt)
-map("i", "jk", "<Esc>", opt)
+map("i", ",a", "<Esc>", opt)
 map("n", "Q", ":qa!", opt)
 map("n", "q", ":q<cr>", opt)
 
@@ -35,7 +35,7 @@ map("v", "K", ":move '<-2<cr>gv-gv", opt)
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 -- 关闭, 所用的为格外的"删除插件" :"moll/vim-bbye"
-map("n", "<C-q>", ":Bdelete!<CR>", opt)
+map("n", "<C-d>", ":Bdelete!<CR>", opt)
 
 -- Telescope_mappings
 -- 查找文件
