@@ -26,9 +26,8 @@ nvim_tree.setup({
 	view = {
 		-- 宽度
 		width = 30,
-		-- 也可以 'right'
 		side = "right",
-		-- 隐藏根目录
+		-- 不隐藏根目录
 		hide_root_folder = false,
 		-- 不显示行数
 		number = false,
@@ -41,8 +40,8 @@ nvim_tree.setup({
 		open_file = {
 			-- 首次打开大小适配
 			resize_window = true,
-			-- 打开文件时关闭 -- 不太适合自己, 因为 经常命令行编译, 要看文件树,
-			-- quit_on_open = true,
+			-- 打开文件时关闭
+			quit_on_open = true,
 		},
 	},
 	-- wsl install -g wsl-open
