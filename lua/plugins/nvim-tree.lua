@@ -27,7 +27,7 @@ nvim_tree.setup({
 		-- 宽度
 		width = 30,
 		-- 也可以 'right'
-		side = "left",
+		side = "right",
 		-- 隐藏根目录
 		hide_root_folder = false,
 		-- 不显示行数
