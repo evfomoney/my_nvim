@@ -6,8 +6,6 @@ local opt = { noremap = true, silent = true }
 
 map("n", "s", "", opt)
 map("i", ",a", "<Esc>", opt)
-map("n", "Q", ":qa!", opt)
-map("n", "q", ":q<cr>", opt)
 
 -- when use x, it means delete without copy to register
 map("n", "x", '"_x', opt)

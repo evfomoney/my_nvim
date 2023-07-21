@@ -13,13 +13,25 @@ vim.wo.signcolumn = "yes"
 
 vim.wo.colorcolumn = "80"
 
-vim.o.tabstop = 2
-vim.bo.tabstop = 2
-vim.o.softtabstop = 2
+-- 修改 缩进等, 4缩进 or 2缩进 -- 目的是去契合formatter
+-- 2 缩进 : 大多数
+-- 4 缩进 : py
 vim.o.shiftround = true
-
-vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
+local filename = vim.fn.expand("%")
+local extension = filename:match(".+%.(%w+)$")
+if extension == "java" then
+	vim.o.tabstop = 4
+	vim.bo.tabstop = 4
+	vim.o.softtabstop = 4
+	vim.o.shiftwidth = 4
+	vim.bo.shiftwidth = 4
+else
+	vim.o.tabstop = 2
+	vim.bo.tabstop = 2
+	vim.o.softtabstop = 2
+	vim.o.shiftwidth = 2
+	vim.bo.shiftwidth = 2
+end
 
 vim.o.expandtab = true
 vim.bo.expandtab = true

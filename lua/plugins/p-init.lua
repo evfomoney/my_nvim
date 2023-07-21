@@ -41,6 +41,9 @@ return require("packer").startup(function(use)
 	-- nvim-treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
+	-- indent blankline
+	use({ "lukas-reineke/indent-blankline.nvim" })
+
 	-- autopairs.nvim
 	use({
 		"windwp/nvim-autopairs",
