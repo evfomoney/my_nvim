@@ -5,6 +5,7 @@ local map = vim.keymap.set
 local opt = { noremap = true, silent = true }
 
 map("n", "s", "", opt)
+map("n", "R", ":edit<cr>", opt) -- 刷新 当前文件
 map("i", ",a", "<Esc>", opt)
 
 -- when use x, it means delete without copy to register
