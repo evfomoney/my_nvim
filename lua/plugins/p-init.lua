@@ -19,101 +19,108 @@ vim.cmd([[
     augroup end
 ]])
 
-return require("packer").startup(function(use)
-	use("wbthomason/packer.nvim")
-	-- My plugins here
-	-- colorschme
-	use("folke/tokyonight.nvim")
-	use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
-	-- nvim-tree
-	use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" })
-	-- bufferline
-	use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
-	-- lualine.nvim
-	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
-	use("arkav/lualine-lsp-progress")
-	-- telescope.nvim
-	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
-		requires = { { "nvim-lua/plenary.nvim" } },
-	})
-	-- nvim-treesitter
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+local status, packer = pcall(require, "packer")
+if not status then
+	vim.notify("没有找到 packer")
+	return
+end
 
-	-- indent blankline
-	use({ "lukas-reineke/indent-blankline.nvim" })
+packer.startup({
+	function(use)
+		use("wbthomason/packer.nvim")
+		-- My plugins here
+		-- colorschme
+		use("folke/tokyonight.nvim")
+		use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
+		-- nvim-tree
+		use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" })
+		-- bufferline
+		use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
+		-- lualine.nvim
+		use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+		use("arkav/lualine-lsp-progress")
+		-- telescope.nvim
+		use({
+			"nvim-telescope/telescope.nvim",
+			tag = "0.1.1",
+			requires = { { "nvim-lua/plenary.nvim" } },
+		})
+		-- nvim-treesitter
+		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
-	-- autopairs.nvim
-	use({
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
-	})
+		-- indent blankline
+		use({ "lukas-reineke/indent-blankline.nvim" })
 
-	-- command.nvim
-	use({
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	})
+		-- autopairs.nvim
+		use({
+			"windwp/nvim-autopairs",
+			config = function()
+				require("nvim-autopairs").setup({})
+			end,
+		})
 
-	-- hop.nvim
-	use({
-		"phaazon/hop.nvim",
-		branch = "v2", -- optional but strongly recommended
-		config = function()
-			-- you can configure Hop the way you like here; see :h hop-config
-			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-		end,
-	})
+		-- command.nvim
+		use({
+			"numToStr/Comment.nvim",
+			config = function()
+				require("Comment").setup()
+			end,
+		})
 
-	-- -- markdown-preview.nvim
-	-- use({
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	run = "cd app && npm install",
-	-- 	setup = function()
-	-- 		vim.g.mkdp_filetypes = { "markdown" }
-	-- 	end,
-	-- 	ft = { "markdown" },
-	-- })
+		-- hop.nvim
+		use({
+			"phaazon/hop.nvim",
+			branch = "v2", -- optional but strongly recommended
+			config = function()
+				-- you can configure Hop the way you like here; see :h hop-config
+				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+			end,
+		})
 
-	-- 补全引擎
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("L3MON4D3/LuaSnip") -- snippets引擎，不装这个自动补全会出问题
-	use("saadparwaiz1/cmp_luasnip")
-	use("hrsh7th/cmp-path") -- 文件路径
-	-- 常见编程语言代码段
-	use("rafamadriz/friendly-snippets")
+		-- nvim-ts-rainbow2.nvim
+		use("HiPhish/rainbow-delimiters.nvim")
 
-	-- mason.nvim
-	use({
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-	})
-	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-		config = function()
-			require("lspsaga").setup({})
-		end,
-	}) -- enhanced lsp uis
+		-- filetype.nvim : load file more quickly
+		use("nathom/filetype.nvim")
 
-	-- trouble
-	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
-	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
-	use("onsails/lspkind.nvim") -- UI增强, icons for autocompletion
-	use("simrat39/rust-tools.nvim") -- rust server
+		-- 补全引擎
+		use("hrsh7th/nvim-cmp")
+		use("hrsh7th/cmp-nvim-lsp")
+		use("L3MON4D3/LuaSnip") -- snippets引擎，不装这个自动补全会出问题
+		use("saadparwaiz1/cmp_luasnip")
+		use("hrsh7th/cmp-path") -- 文件路径
+		-- 常见编程语言代码段
+		use("rafamadriz/friendly-snippets")
 
-	-- formatting & linting
-	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
-	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+		-- mason.nvim
+		use({
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig",
+		})
+		use({
+			"glepnir/lspsaga.nvim",
+			branch = "main",
+			config = function()
+				require("lspsaga").setup({})
+			end,
+		}) -- enhanced lsp uis
 
-	if packer_bootstrap then
-		require("packer").sync()
-	end
-end)
+		-- trouble
+		use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
+		use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+		use("onsails/lspkind.nvim") -- UI增强, icons for autocompletion
+		use("simrat39/rust-tools.nvim") -- rust server
+
+		-- formatting & linting
+		use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
+		use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+
+		if packer_bootstrap then
+			require("packer").sync()
+		end
+	end,
+	config = {
+		max_jobs = 10,
+	},
+})

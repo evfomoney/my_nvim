@@ -105,6 +105,11 @@ _G.packer_plugins = {
     path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["filetype.nvim"] = {
+    loaded = true,
+    path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/filetype.nvim",
+    url = "https://github.com/nathom/filetype.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -212,6 +217,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["rainbow-delimiters.nvim"] = {
+    loaded = true,
+    path = "/home/evfomoney/.local/share/nvim/site/pack/packer/start/rainbow-delimiters.nvim",
+    url = "https://github.com/HiPhish/rainbow-delimiters.nvim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,

@@ -10,6 +10,7 @@ require("plugins.lualine")
 require("plugins.telescope")
 require("plugins.nvim-treesitter")
 require("plugins.indent")
+require("plugins.filetype")
 --require('plugins.glow')
 
 -- mason.nvim
