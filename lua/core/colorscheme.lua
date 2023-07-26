@@ -6,6 +6,7 @@ if not status_ok then
 end
 
 vim.o.background = "dark" -- or "light" or "dark"
+-- vim.o.background = "light" -- or "light" or "dark"
 
 tn.setup({
 	-- style = "storm", -- used for tokyonight

@@ -77,6 +77,9 @@ packer.startup({
 			end,
 		})
 
+		-- gitsigns.nvim
+		use("lewis6991/gitsigns.nvim")
+
 		-- nvim-ts-rainbow2.nvim
 		use("HiPhish/rainbow-delimiters.nvim")
 
@@ -100,7 +103,7 @@ packer.startup({
 		})
 		use({
 			"glepnir/lspsaga.nvim",
-			branch = "main",
+			event = "LspAttach",
 			config = function()
 				require("lspsaga").setup({})
 			end,

@@ -11,6 +11,8 @@ require("plugins.telescope")
 require("plugins.nvim-treesitter")
 require("plugins.indent")
 require("plugins.filetype")
+require("plugins.rainbow2")
+require("plugins.gitsigns")
 --require('plugins.glow')
 
 -- mason.nvim
