@@ -125,5 +125,8 @@ packer.startup({
 	end,
 	config = {
 		max_jobs = 10,
+		git = {
+			default_url_format = "git@github.com:%s",
+		},
 	},
 })
