@@ -102,12 +102,12 @@ packer.startup({
 			"neovim/nvim-lspconfig",
 		})
 		use({
-			"glepnir/lspsaga.nvim",
-			event = "LspAttach",
+			"nvimdev/lspsaga.nvim",
+			after = "nvim-lspconfig",
 			config = function()
 				require("lspsaga").setup({})
 			end,
-		}) -- enhanced lsp uis
+		})
 
 		-- trouble
 		use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
