@@ -105,7 +105,12 @@ packer.startup({
 			"nvimdev/lspsaga.nvim",
 			after = "nvim-lspconfig",
 			config = function()
-				require("lspsaga").setup({})
+				require("lspsaga").setup({
+					finder = {
+						left_width = 0.1,
+						right_width = 0.5,
+					},
+				})
 			end,
 		})
 

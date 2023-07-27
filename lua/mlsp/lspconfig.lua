@@ -22,35 +22,38 @@ if not rust_setup then
 	return
 end
 
-local keymap = vim.keymap -- for conciseness
+local map = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
 	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
-
 	-- mappings
-	keymap.set("n", "<leader>gr", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
-	keymap.set("n", "<leader>gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
-	keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
-	keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
-	keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
-	keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
+	map.set("n", "<leader>gt", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- goto declaration
+	-- '<C-c>v' for vsplit
+	map.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+	--  o for open; s for vsplit; [w for shuttle
+	map.set("n", "<leader>gr", "<cmd>Lspsaga finder<CR>", opts)
+	map.set("n", "<leader>gR", "<cmd>lua vim.lsp.buf.references()<CR>", opts) -- show 当前buf中所有该关键字的运用处, 其功能完全可以由Lspaga finder 替代
+	map.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
+	map.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
+	map.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
 
-	keymap.set("n", "<leader>m", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
-	keymap.set("n", "<leader>M", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
-	keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
-	keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
+	map.set("n", "<leader>m", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
+	map.set("n", "<leader>M", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
+	-- "<C-f> / <C-b>" for scroll_preview
+	map.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
+	map.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
 
-	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-	keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
-	keymap.set("n", "<leader>k", "<cmd>Lspsaga term_toggle<CR>", opts) -- see outline on right hand side
+	map.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
+	map.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts) -- see outline on right hand side
+	map.set("n", "<leader>k", "<cmd>Lspsaga term_toggle<CR>", opts) -- see outline on right hand side
 
 	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == "tsserver" then
-		keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-		keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
-		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+		map.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
+		map.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
+		map.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
 	end
 end
 
@@ -74,10 +77,10 @@ rt.setup({
 })
 
 -- configure cpp clangd
-lspconfig["clangd"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+-- lspconfig["clangd"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
 
 -- configure css server
 lspconfig["cssls"].setup({

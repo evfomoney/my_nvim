@@ -12,6 +12,7 @@ filetype.setup({
 			pn = "potion",
 			java = "java",
 			py = "python",
+			html = "html",
 		},
 		literal = {
 			-- Set the filetype of files named "MyBackupFile" to lua
