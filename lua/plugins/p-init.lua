@@ -106,9 +106,16 @@ packer.startup({
 			after = "nvim-lspconfig",
 			config = function()
 				require("lspsaga").setup({
+					symbol_in_winbar = {
+						enable = true,
+					},
 					finder = {
-						left_width = 0.1,
+						left_width = 0.2,
 						right_width = 0.5,
+					},
+					implement = {
+						enable = true,
+						virtual_text = true,
 					},
 				})
 			end,
