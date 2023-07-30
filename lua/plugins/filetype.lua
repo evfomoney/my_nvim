@@ -13,6 +13,7 @@ filetype.setup({
 			java = "java",
 			py = "python",
 			html = "html",
+			c = "c",
 		},
 		literal = {
 			-- Set the filetype of files named "MyBackupFile" to lua

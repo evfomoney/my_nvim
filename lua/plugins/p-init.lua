@@ -80,7 +80,7 @@ packer.startup({
 		-- gitsigns.nvim
 		use("lewis6991/gitsigns.nvim")
 
-		-- nvim-ts-rainbow2.nvim
+		-- rainbow-delimiters.nvim
 		use("HiPhish/rainbow-delimiters.nvim")
 
 		-- filetype.nvim : load file more quickly
@@ -106,16 +106,9 @@ packer.startup({
 			after = "nvim-lspconfig",
 			config = function()
 				require("lspsaga").setup({
-					symbol_in_winbar = {
-						enable = true,
-					},
 					finder = {
 						left_width = 0.2,
 						right_width = 0.5,
-					},
-					implement = {
-						enable = true,
-						virtual_text = true,
 					},
 				})
 			end,
