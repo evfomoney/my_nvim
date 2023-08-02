@@ -12,4 +12,4 @@ vim.cmd([[autocmd BufWritePre *.md :silent! execute ':silent! write !sleep 1s']]
 --vim.cmd [[let g:perl_host_prog = '/path/to/perl']]
 --vim.env.PERL5LIB = '/path/to/perl5.22/lib'
 -- This is because the neovim need perl5.22 but the environment's perl is 5.30
-vim.cmd([[let g:loaded_perl_provider = 0]])
+-- vim.cmd([[let g:loaded_perl_provider = 0]])
