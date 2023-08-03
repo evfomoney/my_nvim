@@ -47,13 +47,14 @@ map("n", "<leader>fg", ":Telescope git_files<cr>", opt)
 map("n", "<leader>fh", ":Telescope man_pages<cr>", opt)
 
 -- nvim-tree
-map("n", "<leader>tf", ":NvimTreeFocus<cr>", opt)
-map("n", "<leader>tt", ":NvimTreeToggle<cr>", opt)
-map("n", "<leader>tr", ":NvimTreeRefresh<cr>", opt)
+map("n", "<leader>e", ":NvimTreeToggle<cr>", opt)
 
--- hop.nvim_mappings
+-- hop
 map("n", "<leader>hw", ":HopWordMW<cr>", opt)
 
--- trouble.nvim
+-- trouble
 map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opt)
 map("n", "<leader>xd", "<cmd>TroubleToggle workspace_diagnostics<cr>", opt)
+
+-- markdown-preview
+map("n", "<leader>mp", ":MarkdownPreview<CR>", opt)
